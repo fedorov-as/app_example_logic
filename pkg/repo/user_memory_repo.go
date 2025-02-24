@@ -19,13 +19,13 @@ func NewUsersMemoryRepo() *UsersMemoryRepo {
 	}
 }
 
-func (repo *UsersMemoryRepo) AddUser(user model.User) error {
+func (repo *UsersMemoryRepo) AddUser(user model.User) (model.User, error) {
 	if slices.IndexFunc(repo.data, func(elem model.User) bool { return elem.Nickname == user.Nickname }) != -1 {
-		return fmt.Errorf("user exists")
+		return model.User{}, fmt.Errorf("user exists")
 	}
 
 	repo.data = append(repo.data, user)
-	return nil
+	return user, nil
 }
 
 func (repo UsersMemoryRepo) GetUser(nickname string) (model.User, error) {

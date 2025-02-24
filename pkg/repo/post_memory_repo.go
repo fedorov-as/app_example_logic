@@ -20,10 +20,11 @@ func NewPostsMemoryRepo() *PostsMemoryRepo {
 	}
 }
 
-func (repo *PostsMemoryRepo) AddPost(text string, owner model.User) error {
-	repo.data[repo.nextID] = model.NewPost(repo.nextID, text, owner)
+func (repo *PostsMemoryRepo) AddPost(text string, owner model.User) (model.Post, error) {
+	post := model.NewPost(repo.nextID, text, owner)
+	repo.data[repo.nextID] = post
 	repo.nextID++
-	return nil
+	return post, nil
 }
 
 func (repo PostsMemoryRepo) GetPostByID(id int) (model.Post, error) {

@@ -5,6 +5,6 @@ import (
 )
 
 type UsersRepo interface {
-	AddUser(user model.User) error
+	AddUser(user model.User) (model.User, error)
 	GetUser(nickname string) (model.User, error)
 }

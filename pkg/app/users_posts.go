@@ -17,14 +17,14 @@ func NewUsersPosts() *UsersPosts {
 	}
 }
 
-func (app *UsersPosts) CreateUser(nickname, password string) error {
+func (app *UsersPosts) CreateUser(nickname, password string) (model.User, error) {
 	return app.users.AddUser(model.NewUser(nickname, password))
 }
 
-func (app *UsersPosts) AddPost(text string, nickname string) error {
+func (app *UsersPosts) AddPost(text string, nickname string) (model.Post, error) {
 	owner, err := app.users.GetUser(nickname)
 	if err != nil {
-		return err
+		return model.Post{}, err
 	}
 
 	return app.posts.AddPost(text, owner)

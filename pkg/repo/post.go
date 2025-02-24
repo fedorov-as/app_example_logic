@@ -1,6 +1,6 @@
 package repo
 
-import "example_logic/pkg/model"
+import "github.com/fedorov-as/app_example_logic/pkg/model"
 
 type PostsRepo interface {
 	AddPost(text string, owner model.User) error

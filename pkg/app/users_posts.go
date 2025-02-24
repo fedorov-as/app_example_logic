@@ -1,8 +1,8 @@
 package app
 
 import (
-	"example_logic/pkg/model"
-	"example_logic/pkg/repo"
+	"github.com/fedorov-as/app_example_logic/pkg/model"
+	"github.com/fedorov-as/app_example_logic/pkg/repo"
 )
 
 type UsersPosts struct {

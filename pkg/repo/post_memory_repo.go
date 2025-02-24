@@ -1,8 +1,9 @@
 package repo
 
 import (
-	"example_logic/pkg/model"
 	"fmt"
+
+	"github.com/fedorov-as/app_example_logic/pkg/model"
 )
 
 type PostsMemoryRepo struct {

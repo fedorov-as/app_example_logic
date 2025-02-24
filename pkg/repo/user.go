@@ -1,7 +1,7 @@
 package repo
 
 import (
-	"example_logic/pkg/model"
+	"github.com/fedorov-as/app_example_logic/pkg/model"
 )
 
 type UsersRepo interface {

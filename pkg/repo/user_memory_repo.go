@@ -1,9 +1,10 @@
 package repo
 
 import (
-	"example_logic/pkg/model"
 	"fmt"
 	"slices"
+
+	"github.com/fedorov-as/app_example_logic/pkg/model"
 )
 
 type UsersMemoryRepo struct {

@@ -21,6 +21,10 @@ func (app *UsersPosts) CreateUser(nickname, password string) (model.User, error)
 	return app.users.AddUser(model.NewUser(nickname, password))
 }
 
+func (app UsersPosts) GetUser(nickname string) (model.User, error) {
+	return app.users.GetUser(nickname)
+}
+
 func (app *UsersPosts) AddPost(text string, nickname string) (model.Post, error) {
 	owner, err := app.users.GetUser(nickname)
 	if err != nil {

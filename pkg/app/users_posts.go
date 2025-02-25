@@ -42,3 +42,7 @@ func (app UsersPosts) GetUserPosts(nickname string) ([]model.Post, error) {
 
 	return app.posts.GetPostsByOwner(owner)
 }
+
+func (app *UsersPosts) DeletePost(id int) error {
+	return app.posts.DeletePost(id)
+}

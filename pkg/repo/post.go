@@ -6,4 +6,5 @@ type PostsRepo interface {
 	AddPost(text string, owner model.User) (model.Post, error)
 	GetPostByID(id int) (model.Post, error)
 	GetPostsByOwner(owner model.User) ([]model.Post, error)
+	DeletePost(id int) error
 }

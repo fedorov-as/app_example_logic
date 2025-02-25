@@ -44,3 +44,12 @@ func (repo PostsMemoryRepo) GetPostsByOwner(owner model.User) ([]model.Post, err
 
 	return posts, nil
 }
+
+func (repo *PostsMemoryRepo) DeletePost(id int) error {
+	if _, ok := repo.data[id]; ok {
+		delete(repo.data, id)
+		return nil
+	}
+
+	return fmt.Errorf("no post with id %d", id)
+}
